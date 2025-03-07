@@ -1,13 +1,15 @@
-# TODO: Vul deze Makefile zodat je met `make compile` alle bestanden in de `/src` directory compiled en linked, waarbij de object files in de `/build` directory komen, en dat de uiteindelijke binary `friendshiptester.bin` in de root directory terecht komt. 
-# Zorg er ook voor dat je met `make clean` de build directory en de binary verwijdert en dat je met `make run` het programma kan uitvoeren en dat je ook hier flags aan kan meegeven.
+#Variabelen declareren
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11
+CFLAGS = -Wall -Wextra -std=c11 	#Flags meegeven
 SRCDIR = ./src
 BUILDDIR = ./build
 
+#.c files declareren
 CFILES = $(wildcard $(SRCDIR)/*.c)
+#.o files declareren
 OBJECTS = $(patsubst $(SRCDIR)/%.c, $(BUILDDIR)/%.o, $(CFILES))
 
+#Naam van de .bin file
 TARGET = friendshiptester.bin
 
 
@@ -20,11 +22,14 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 
+#Je moet de makefile aanpassen zodat het C-programma kan gecompiled+gelinked worden
 compile: $(TARGET)
 
+#Binaries en object files worden gedeletet
 clean:
 	rm -rf $(TARGET) $(OBJECTS)
 
+#Project kan gerund worden
 run: $(TARGET)
 	./$(TARGET)
 
