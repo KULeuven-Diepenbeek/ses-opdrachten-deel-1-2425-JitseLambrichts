@@ -75,7 +75,7 @@ public class CheckNeighboursInGridTest {
                 0, 1, 1, 1
             );
 
-            //Act       //TODO opletten met Iterable<Integer> result = ...
+            //Act     
             CheckNeighboursInGrid.getSameNeighboursIds(grid, 4, 4, 20);
         });
 
@@ -114,7 +114,7 @@ public class CheckNeighboursInGridTest {
                 0, 1, 1, 1
             );
 
-            //Act       //TODO opletten met Iterable<Integer> result = ...
+            //Act     
             CheckNeighboursInGrid.getSameNeighboursIds(grid, 4, 4, 20);
         });
 
@@ -137,7 +137,7 @@ public class CheckNeighboursInGridTest {
                 0, 1, 1, 1
             );
 
-            //Act   //TODO opletten met Iterable<Integer> result = ...
+            //Act  
             CheckNeighboursInGrid.getSameNeighboursIds(grid, 3, 3, 5);
         });
 
