@@ -21,7 +21,9 @@ jobs:
         uses: gradle/gradle-build-action@v2
         
       - name: Execute Gradle build
+        working-directory: ./dependency-management/checkneighbours
         run: ./gradlew build
         
       - name: Run specific test
+        working-directory: ./dependency-management/checkneighbours
         run: ./gradlew test --tests "be.ses.CheckNeighboursInGridTest"
